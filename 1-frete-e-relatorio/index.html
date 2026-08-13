@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div>
         <label for="combustivel">Qual o preço do combustível hoje?</label>
-        <input type="text" id="combustivel" placeholder="Digite o valor aqui">
+        <input type="number" id="combustivel" placeholder="Digite o valor aqui">
     </div>
     <div>
-        <label for="">Código do pedido:</label>
-        <input type="text" id="codigo">
+        <label for="codigo">Código do pedido:</label>
+        <input type="number" id="codigo">
     </div>
     <div>
-        <label for="Digite sua região (1, 2 ou 3)"></label>
+        <label for="regiao">Digite sua região (1, 2 ou 3)</label>
+        <input type="text" id="regiao">
+    </div>
+    <div>
+        <label for="distancia">Distância em Km:</label>
+        <input type="number" id="distancia">
+    </div>
+    <div>
+        <label for="quantidade">Quantidade de peças:</label>
+        <input type="number" id="quantidade">
+    </div>
+    <div>
+        <p>Aceita Rastreamento?</p>
+        <label for="sim">Sim</label>
+        <input type="radio" id="sim" name="rastreamento" required>
+        <label for="nao">Não</label>
+        <input type="radio" id="nao" name="rastreamento" required>
+    </div>
+    <div>
+        <button type="button" onclick="adicionarPedido()">Adicionar mais pedidos</button>
+        <button type="button" onclick="gerarRelatorio()">Encerrar e Gerar Relatório</button>
     </div>
 </body>
 </html>
