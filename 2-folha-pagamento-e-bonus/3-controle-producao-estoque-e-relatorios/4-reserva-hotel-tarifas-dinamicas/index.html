@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Cadastro de Funcionários</h1>
+    <div class="campo">
+        <label for="codigo">Código do funcionário:</label>
+        <input type="number" id="codigo">
+    </div>
+    <div>
+        <label for="salario_minimo">Salário Mínimo atual:</label>
+        <input type="number" id="salario_minimo" required>
+    </div>
+    <div class="campo">
+        <label for="horas">Horas trabalhadas no mês:</label>
+        <input type="number" id="horas">  
+    </div>
+    <div>
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" required>
+            <option value="" disabled selected>Selecione a categoria</option>
+            <option value="func_operacional">Funcionário Operacional</option>
+            <option value="gerente">Gerente</option>
+        </select>
+    </div>
+    <div>
+        <label for="turno">Turno de trabalho:</label>
+            <select id="turno" required>
+                <option value="" disabled selected>Selecione o turno</option>
+                <option value="matutino">Matutino (M)</option>
+                <option value="vespertino">Vespertino (V)</option>
+                <option value="noturno">Noturno (N)</option>
+            </select>
+        
+    </div>
+    <div>
+        <label for="desempenho">Desempenho Mensal do Funcionário:</label>
+        <select id="desempenho" required>
+            <option value="" disabled selected>Selecione uma nota</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="adicionarFuncionario()">Adicionar Funcionário</button>
+        <button onclick="gerarRelatorio()">Encerrar e Gerar Relatório</button>
+    </div>
+    <div id="relatorio"></div>
+
+</body>
+</html>
