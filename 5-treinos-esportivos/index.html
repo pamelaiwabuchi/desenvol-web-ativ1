@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Treinos Esportivos Semanais</h1>
+    <div class="campo">
+        <label for="cargaRecomendada">Carga máxima semanal recomendada:</label>
+        <input type="number" id="cargaRecomendada">
+    </div>
+    <div>
+        <label for="codigoTreino">Código de Treino:</label>
+        <input type="number" id="codigoTreino" required>
+    </div>
+    <div class="campo">
+        <label for="nome">Nome do Jogador:</label>
+        <input type="text" id="nome">  
+    </div>
+    <div class="campo">
+        <label for="posicao">Posicao:</label>
+        <select id="posicao" required>
+            <option value="" disabled selected>Selecione a posição</option>
+            <option value="goleiro">Goleiro</option>
+            <option value="zagueiro">Zagueiro</option>
+            <option value="meioCampo">Meio-campo</option>
+            <option value="atacante">Atacante</option>
+        </select>
+    </div>
+    <div class="campo">
+        <label for="tipoTreino">Tipo de treino:</label>
+            <select id="tipoTreino" required>
+                <option value="" disabled selected>Selecione o treino:</option>
+                <option value="fisico">Físico</option>
+                <option value="tecnico">Técnico</option>
+                <option value="estrategico">Estratégico</option>
+            </select>
+    </div>
+    <div class="campo">
+        <label for="duracao">Duração em minutos:</label>
+        <input type="number" id="duracao">  
+    </div>
+    <div>
+        <label for="intensidade">Intensidade (1 a 10)</label>
+        <input type="number" id="intensidade">
+    </div> 
+    <div>
+        <button onclick="adicionarTreino()">Adicionar Treino</button>
+        <button onclick="gerarRelatorio()">Encerrar e Gerar Relatório</button>
+    </div>
+    <div id="relatorio"></div>
+
+</body>
+</html>
