@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Produção</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <nav class="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-2 md:gap-12 bg-emerald-800 p-4 w-full">
+<body class="font-['Google_Sans'] bg-white min-h-screen">
+    <nav class="font-bold flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-2 md:gap-12 bg-blue-950 p-4 w-full">
         <a href="/index.html" class="text-white hover:underline text-sm md:text-base">Home</a>
         <a href="/1-frete-e-relatorio/index.html" class="text-white hover:underline text-sm md:text-base">Frete</a>
         <a href="/2-folha-pagamento-e-bonus/index.htm" class="text-white hover:underline text-sm md:text-base">Folha de Pagamento</a>
@@ -16,36 +20,41 @@
         <a href="/5-treinos-esportivos/index.html" class="text-white hover:underline text-sm md:text-base">Treinos Esportivos</a>
         <a href="/6-vendas-comissoes/index.html" class="text-white hover:underline text-sm md:text-base">Vendas e Comissões</a>
     </nav>
-    <h1>Sistema de Controle de Produção com Estoque e Relatórios</h1>
-    <div class="campo">
-        <label for="codigoOrdem">Código da ordem:</label>
-        <input type="number" id="codigoOrdem">
+
+    <div class="flex justify-center items-center px-4 py-8 md:py-12">
+        <div class="container bg-blue-800 rounded-2xl md:rounded-3xl p-6 md:p-10 w-full max-w-2xl flex flex-col gap-4">
+            <h1 class="text-white text-2xl md:text-3xl font-bold text-center mb-2">Sistema de Controle de Produção com Estoque e Relatórios</h1>
+
+            <div class="campo flex flex-col gap-1">
+                <label for="codigoOrdem" class="text-white text-base md:text-lg">Código da ordem:</label>
+                <input type="number" id="codigoOrdem" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="codigoProduto" class="text-white text-base md:text-lg">Código do produto:</label>
+                <input type="number" id="codigoProduto" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="tipo" class="text-white text-base md:text-lg">Tipo de Produto (1-Padrão, 2-Premium, 3-Sob encomenda)</label>
+                <input type="number" id="tipo" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="qtdeProduzida" class="text-white text-base md:text-lg">Quantidade produzida:</label>
+                <input type="number" id="qtdeProduzida" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="custoUnit" class="text-white text-base md:text-lg">Custo Unitário de Produção:</label>
+                <input type="number" id="custoUnit" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="estoqueInicial" class="text-white text-base md:text-lg">Estoque Inicial do Produto:</label>
+                <input type="number" id="estoqueInicial" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="botoes flex flex-col sm:flex-row gap-3 mt-2">
+                <button onclick="adicionarOrdem()" class="bg-white text-blue-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Adicionar Ordem de Produção</button>
+                <button onclick="gerarRelatorio()" class="bg-white text-blue-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Gerar Relatório</button>
+            </div>
+            <div id="relatorio" class="text-white"></div>
+        </div>
     </div>
-    <div class="campo">
-        <label for="codigoProduto">Código do produto:</label>
-        <input type="number" id="codigoProduto">
-    </div>
-    <div class="campo">
-        <label for="tipo">Tipo de Produto (1-Padrão, 2-Premium, 3-Sob encomenda)</label>
-        <input type="number" id="tipo">
-    </div>
-    <div class="campo">
-        <label for="qtdeProduzida">Quantidade produzida:</label>
-        <input type="number" id="qtdeProduzida">
-    </div>
-    <div class="campo">
-        <label for="custoUnit">Custo Unitário de Produção:</label>
-        <input type="number" id="custoUnit">
-    </div>
-    <div>
-        <label for="estoqueInicial">Estoque Inicial do Produto:</label>
-        <input type="number" id="estoqueInicial">
-    </div>
-    <div>
-        <button onclick="adicionarOrdem()">Adicionar Ordem de Produção</button>
-        <button onclick="gerarRelatorio()">Gerar Relatório</button>
-    </div>
-    <div id="relatorio"></div>
-    
 </body>
 </html>

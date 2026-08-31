@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vendas e Comissões</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <nav class="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-2 md:gap-12 bg-emerald-800 p-4 w-full">
+<body class="font-['Google_Sans'] bg-white min-h-screen">
+    <nav class="font-bold flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-2 md:gap-12 bg-orange-900 p-4 w-full">
         <a href="/index.html" class="text-white hover:underline text-sm md:text-base">Home</a>
         <a href="/1-frete-e-relatorio/index.html" class="text-white hover:underline text-sm md:text-base">Frete</a>
         <a href="/2-folha-pagamento-e-bonus/index.htm" class="text-white hover:underline text-sm md:text-base">Folha de Pagamento</a>
@@ -16,50 +20,55 @@
         <a href="/5-treinos-esportivos/index.html" class="text-white hover:underline text-sm md:text-base">Treinos Esportivos</a>
         <a href="" class="text-white hover:underline text-sm md:text-base">Vendas e Comissões</a>
     </nav>
-    <h1>Vendas, Comissões e Metas</h1>
-    <div>
-        <label for="metaMensal">Meta mensal de vendas por vendedor:</label>
-        <input type="number" id="metaMensal">
-    </div>
-    <div>
-        <label for="percentualComissao">Percentual Base de Comissão:</label>
-        <input type="number" id="percentualComissao">
-    </div>
-    <div>
-        <label for="codigoVenda">Código de venda:</label>
-        <input type="number" id="codigoVenda">
-    </div>
-    <div class="campo">
-        <label for="codigoVendedor">Código do Vendedor:</label>
-        <input type="number" id="codigoVendedor">
-    </div>
-    <div>
-        <label for="regiao">Região da loja (1–Norte, 2–Nordeste, 3–Sudeste, 4–Sul)</label>
-        <select name="regiao" id="regiao">
-            <option value="" disabled selected>Selecione uma região</option>
-            <option value="1">1–Norte</option>
-            <option value="2">2–Nordeste</option>
-            <option value="3">3–Sudeste</option>
-            <option value="4">4–Sul</option>
-        </select>
-    </div>
-    <div>
-        <label for="valorVenda">Valor da Venda:</label>
-        <input type="text" id="valorVenda">
-    </div>
-    <div>
-        <label for="tipoCliente">Tipo de Cliente (PF–Pessoa Física, PJ–Pessoa Jurídica):</label>
-        <select name="tipoCliente" id="tipoCliente">
-            <option value="" disabled selected>Tipo de cliente (PF–Pessoa Física, PJ–Pessoa Jurídica)</option>
-            <option value="PF">PF–Pessoa Física</option>
-            <option value="PJ">PJ–Pessoa Jurídica</option>
-        </select>
-    </div>
-    <div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-        <button onclick="adicionarVenda()">Adicionar Venda</button>
-        <button onclick="gerarRelatorio()">Encerrar e Gerar Relatório</button>
-    </div>
-    <div id="relatorio"></div>
 
+    <div class="flex justify-center items-center px-4 py-8 md:py-12">
+        <div class="container bg-orange-700 rounded-2xl md:rounded-3xl p-6 md:p-10 w-full max-w-2xl flex flex-col gap-4">
+            <h1 class="text-white text-2xl md:text-3xl font-bold text-center mb-2">Vendas, Comissões e Metas</h1>
+
+            <div class="flex flex-col gap-1">
+                <label for="metaMensal" class="text-white text-base md:text-lg">Meta mensal de vendas por vendedor:</label>
+                <input type="number" id="metaMensal" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="percentualComissao" class="text-white text-base md:text-lg">Percentual Base de Comissão:</label>
+                <input type="number" id="percentualComissao" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="codigoVenda" class="text-white text-base md:text-lg">Código de venda:</label>
+                <input type="number" id="codigoVenda" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="codigoVendedor" class="text-white text-base md:text-lg">Código do Vendedor:</label>
+                <input type="number" id="codigoVendedor" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="regiao" class="text-white text-base md:text-lg">Região da loja (1–Norte, 2–Nordeste, 3–Sudeste, 4–Sul)</label>
+                <select name="regiao" id="regiao" class="text-gray-500 rounded-md px-3 py-2 w-full">
+                    <option value="" disabled selected>Selecione uma região</option>
+                    <option value="1">1–Norte</option>
+                    <option value="2">2–Nordeste</option>
+                    <option value="3">3–Sudeste</option>
+                    <option value="4">4–Sul</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="valorVenda" class="text-white text-base md:text-lg">Valor da Venda:</label>
+                <input type="text" id="valorVenda" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="tipoCliente" class="text-white text-base md:text-lg">Tipo de Cliente (PF–Pessoa Física, PJ–Pessoa Jurídica):</label>
+                <select name="tipoCliente" id="tipoCliente" class="text-gray-500 rounded-md px-3 py-2 w-full">
+                    <option value="" disabled selected>Tipo de cliente (PF–Pessoa Física, PJ–Pessoa Jurídica)</option>
+                    <option value="PF">PF–Pessoa Física</option>
+                    <option value="PJ">PJ–Pessoa Jurídica</option>
+                </select>
+            </div>
+            <div class="botoes flex flex-col sm:flex-row gap-3 mt-2">
+                <button onclick="adicionarVenda()" class="bg-white text-orange-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Adicionar Venda</button>
+                <button onclick="gerarRelatorio()" class="bg-white text-orange-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Encerrar e Gerar Relatório</button>
+            </div>
+            <div id="relatorio" class="text-white"></div>
+        </div>
+    </div>
 </body>
 </html>
