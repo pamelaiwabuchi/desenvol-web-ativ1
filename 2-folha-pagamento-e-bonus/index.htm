@@ -3,63 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Folha de Pagamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <h1>Cadastro de Funcionários</h1>
-    <div class="campo">
-        <label for="codigo">Código do funcionário:</label>
-        <input type="number" id="codigo">
-    </div>
-    <div>
-        <label for="salario_minimo">Salário Mínimo atual:</label>
-        <input type="number" id="salario_minimo" required>
-    </div>
-    <div class="campo">
-        <label for="horas">Horas trabalhadas no mês:</label>
-        <input type="number" id="horas">  
-    </div>
-    <div>
-        <label for="categoria">Categoria:</label>
-        <select id="categoria" required>
-            <option value="" disabled selected>Selecione a categoria</option>
-            <option value="func_operacional">Funcionário Operacional</option>
-            <option value="gerente">Gerente</option>
-        </select>
-    </div>
-    <div>
-        <label for="turno">Turno de trabalho:</label>
-            <select id="turno" required>
-                <option value="" disabled selected>Selecione o turno</option>
-                <option value="matutino">Matutino (M)</option>
-                <option value="vespertino">Vespertino (V)</option>
-                <option value="noturno">Noturno (N)</option>
-            </select>
-        
-    </div>
-    <div>
-        <label for="desempenho">Desempenho Mensal do Funcionário:</label>
-        <select id="desempenho" required>
-            <option value="" disabled selected>Selecione uma nota</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-    </div>
-    <div>
-        <button onclick="adicionarFuncionario()">Adicionar Funcionário</button>
-        <button onclick="gerarRelatorio()">Encerrar e Gerar Relatório</button>
-    </div>
-    <div id="relatorio"></div>
+<body class="font-['Google_Sans'] bg-white min-h-screen">
+    <nav class="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-2 md:gap-12 bg-amber-900 p-4 w-full">
+        <a href="/index.html" class="text-white hover:underline text-sm md:text-base">Home</a>
+        <a href="/1-frete-e-relatorio/index.html" class="text-white hover:underline text-sm md:text-base">Frete</a>
+        <a href="" class="text-white hover:underline text-sm md:text-base">Folha de Pagamento</a>
+        <a href="/3-controle-producao-estoque-e-relatorios/index.html" class="text-white hover:underline text-sm md:text-base">Controle de Produção e Estoque</a>
+        <a href="/4-reserva-hotel-tarifas/index.html" class="text-white hover:underline text-sm md:text-base">Reserva de Hotel</a>
+        <a href="/5-treinos-esportivos/index.html" class="text-white hover:underline text-sm md:text-base">Treinos Esportivos</a>
+        <a href="/6-vendas-comissoes/index.html" class="text-white hover:underline text-sm md:text-base">Vendas e Comissões</a>
+    </nav>
 
+    <div class="flex justify-center items-center px-4 py-8 md:py-12">
+        <div class="container bg-amber-800 rounded-2xl md:rounded-3xl p-6 md:p-10 w-full max-w-2xl flex flex-col gap-4">
+            <h1 class="text-white text-2xl md:text-3xl font-bold text-center mb-2">Cadastro de Funcionários</h1>
+
+            <div class="campo flex flex-col gap-1">
+                <label for="codigo" class="text-white text-base md:text-lg">Código do funcionário:</label>
+                <input type="number" id="codigo" class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="salario_minimo" class="text-white text-base md:text-lg">Salário Mínimo atual:</label>
+                <input type="number" id="salario_minimo" required class="text-gray-500 rounded-md px-3 py-2 w-full">
+            </div>
+            <div class="campo flex flex-col gap-1">
+                <label for="horas" class="text-white text-base md:text-lg">Horas trabalhadas no mês:</label>
+                <input type="number" id="horas" class="text-gray-500 rounded-md px-3 py-2 w-full">  
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="categoria" class="text-white text-base md:text-lg">Categoria:</label>
+                <select id="categoria" required class="text-gray-500 rounded-md px-3 py-2 w-full">
+                    <option value="" disabled selected>Selecione a categoria</option>
+                    <option value="func_operacional">Funcionário Operacional</option>
+                    <option value="gerente">Gerente</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="turno" class="text-white text-base md:text-lg">Turno de trabalho:</label>
+                <select id="turno" required class="text-gray-500 rounded-md px-3 py-2 w-full">
+                    <option value="" disabled selected>Selecione o turno</option>
+                    <option value="matutino">Matutino (M)</option>
+                    <option value="vespertino">Vespertino (V)</option>
+                    <option value="noturno">Noturno (N)</option>
+                </select>
+            </div>
+            <div class="flex flex-col gap-1">
+                <label for="desempenho" class="text-white text-base md:text-lg">Desempenho Mensal do Funcionário:</label>
+                <select id="desempenho" required class="text-gray-500 rounded-md px-3 py-2 w-full">
+                    <option value="" disabled selected>Selecione uma nota</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="botoes flex flex-col sm:flex-row gap-3 mt-2">
+                <button onclick="adicionarFuncionario()" class="bg-white text-amber-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Adicionar Funcionário</button>
+                <button onclick="gerarRelatorio()" class="bg-white text-amber-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 text-sm md:text-base">Encerrar e Gerar Relatório</button>
+            </div>
+            <div id="relatorio" class="text-white"></div>
+        </div>
+    </div>
 </body>
 </html>
