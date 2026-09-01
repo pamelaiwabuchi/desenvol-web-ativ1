@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para a disciplina de **Desenvolvimento Web**, no curso de Desenvolvimento de Sistemas Multiplataforma (DSM) — Fatec São José dos Campos.
 
-O projeto reúne 6 atividades práticas em HTML, CSS e JavaScript, cada uma simulando um sistema de cálculo/gerenciamento diferente, com cadastro de registros e geração de relatório.
+O projeto reune 6 atividades práticas em HTML, CSS e JavaScript, cada uma simulando um sistema de cálculo/gerenciamento diferente, com cadastro de registros e geração de relatório.
 
 🔗 **Acesse o site publicado:** `https://pamelaiwabuchi.github.io/desenvol-web-ativ1/index.html`
 
